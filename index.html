@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#073b3a">
+<meta name="description" content="Explore Gokarna beaches, discover coastal walks, open map directions, and plan your beach trip with Gokarna Beach Tracker.">
+<title>Gokarna Beach Tracker | Explore the Coast</title>
+<style>
+:root{--ink:#123b39;--deep:#073b3a;--sea:#0c7774;--foam:#e9f5ee;--sand:#f7f0e3;--orange:#ef9b58;--muted:#647875;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fbfaf6}
+a{color:inherit}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 6vw;background:#fbfaf6;position:sticky;top:0;z-index:10;border-bottom:1px solid #e5e8df}
+.brand{display:flex;gap:10px;align-items:center;text-decoration:none;font-weight:850;letter-spacing:-.04em}.brand-mark{width:38px;height:38px;display:grid;place-items:center;background:var(--deep);color:white;border-radius:12px;font-size:21px}.brand span small{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:2px}
+.navlinks{display:flex;gap:26px;align-items:center}.navlinks a{text-decoration:none;font-size:14px;font-weight:650}.navlinks a:hover{color:var(--sea)}.nav-cta{background:var(--deep);color:#fff!important;padding:12px 17px;border-radius:999px}
+.hero{min-height:610px;display:grid;grid-template-columns:1.04fr .96fr;background:var(--deep);color:white;overflow:hidden}
+.hero-copy{padding:86px 5vw 72px 8vw;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.2em;font-weight:800;color:#a8d8c8;display:flex;align-items:center;gap:10px}.eyebrow:before{content:"";width:26px;height:2px;background:var(--orange)}
+h1{font-size:clamp(48px,6.4vw,82px);line-height:.98;letter-spacing:-.065em;margin:22px 0 22px;max-width:660px}h1 em{font-family:Georgia,serif;font-weight:500;color:#f3bc84}
+.hero-copy p{font-size:17px;line-height:1.7;color:#d3e4dd;max-width:500px;margin:0 0 28px}
+.search{display:flex;max-width:510px;background:white;padding:7px;border-radius:14px;gap:6px}.search input{min-width:0;flex:1;border:0;outline:0;padding:13px 14px;font:inherit;color:var(--ink)}.search button{border:0;background:var(--orange);color:#2c3329;border-radius:10px;padding:0 19px;font-weight:800;cursor:pointer}
+.hero-note{margin-top:18px;font-size:12px;color:#a8c7bc}
+.hero-visual{position:relative;min-height:470px;background:linear-gradient(180deg,rgba(7,59,58,.04),rgba(7,59,58,.3)),url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=85') center/cover}
+.hero-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--deep),transparent 28%),linear-gradient(0deg,rgba(4,35,34,.4),transparent 45%)}
+.photo-label{position:absolute;z-index:1;bottom:32px;right:32px;background:rgba(255,255,255,.92);color:var(--deep);padding:15px 18px;border-radius:13px;font-size:13px;font-weight:800;box-shadow:0 10px 35px #062d2a40}
+.stats{display:flex;gap:30px;margin-top:38px}.stat strong{display:block;font-size:23px;letter-spacing:-.04em}.stat span{font-size:11px;color:#b7d0c6;text-transform:uppercase;letter-spacing:.12em}
+.section{padding:82px 7vw}.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:30px}.kicker{font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.18em;color:var(--sea)}h2{font-size:clamp(32px,4vw,49px);letter-spacing:-.055em;line-height:1.05;margin:10px 0 0}.section-head p{max-width:400px;color:var(--muted);line-height:1.65;margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.card{background:white;border:1px solid #e8e8df;border-radius:20px;overflow:hidden;transition:transform .2s,box-shadow .2s}.card:hover{transform:translateY(-4px);box-shadow:0 18px 35px #123b3910}.card-img{height:220px;position:relative;background-size:cover;background-position:center}.badge{position:absolute;top:14px;left:14px;background:#fff;color:var(--deep);font-size:11px;font-weight:850;padding:8px 11px;border-radius:99px}.card-body{padding:21px}.card-top{display:flex;justify-content:space-between;gap:10px;align-items:start}.card h3{margin:0;font-size:22px;letter-spacing:-.04em}.type{font-size:11px;color:var(--sea);font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-top:6px}.card p{font-size:14px;line-height:1.65;color:var(--muted);min-height:68px}.card-actions{display:flex;gap:9px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:10px;padding:11px 14px;text-decoration:none;font-size:12px;font-weight:800;border:1px solid #dbe4dc}.btn-primary{background:var(--deep);color:white;border-color:var(--deep)}.btn:hover{opacity:.85}
+.route-section{background:var(--sand)}.route-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center}.route-copy p{color:var(--muted);line-height:1.75}.route-list{display:grid;gap:12px;margin:25px 0}.route-stop{display:flex;gap:14px;align-items:center;background:#fff;padding:15px;border-radius:13px;border:1px solid #e9e1d2}.num{width:34px;height:34px;border-radius:50%;background:#dcefe4;color:var(--deep);display:grid;place-items:center;font-weight:850;flex:none}.route-stop strong{display:block;font-size:14px}.route-stop small{color:var(--muted);display:block;margin-top:4px}.map-panel{min-height:420px;border-radius:24px;overflow:hidden;position:relative;background:#d9e9dc;border:1px solid #cdded2}.map-panel iframe{width:100%;height:420px;border:0;display:block}.map-caption{font-size:12px;color:var(--muted);margin-top:10px}
+.tips{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}.tip{padding:23px;background:#fff;border:1px solid #e8e8df;border-radius:17px}.tip-icon{font-size:24px}.tip h3{margin:13px 0 8px;font-size:17px}.tip p{font-size:13px;color:var(--muted);line-height:1.65;margin:0}
+.cta{margin:0 7vw 80px;padding:45px 5vw;border-radius:24px;background:var(--deep);color:white;display:flex;justify-content:space-between;align-items:center;gap:25px}.cta h2{font-size:clamp(28px,3.6vw,42px);max-width:550px}.cta p{color:#c8ddd5;line-height:1.6;max-width:510px}.cta .btn{background:var(--orange);border-color:var(--orange);color:#253a31;white-space:nowrap}
+footer{padding:30px 7vw;background:#052f2e;color:#c1d5cd;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px}footer a{color:white}
+.notice{font-size:12px;line-height:1.6;color:#667973;margin-top:16px}
+.empty{display:none;padding:20px;background:#fff4e6;border-radius:12px;color:#7b4a1b;margin-bottom:20px}
+@media(max-width:850px){.nav{padding:0 5vw}.navlinks{gap:14px}.navlinks a:not(.nav-cta){display:none}.hero{grid-template-columns:1fr}.hero-copy{padding:68px 7vw 52px}.hero-visual{min-height:340px}.hero-visual:after{background:linear-gradient(0deg,rgba(7,59,58,.2),transparent)}.stats{gap:22px}.section{padding:62px 6vw}.section-head{display:block}.section-head p{margin-top:15px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.route-layout{grid-template-columns:1fr}.tips{grid-template-columns:1fr 1fr}.cta{margin:0 5vw 55px;display:block}.cta .btn{margin-top:10px}}
+@media(max-width:560px){.brand{font-size:14px}.nav-cta{padding:10px 12px;font-size:12px!important}.hero-copy{padding-top:56px}.hero-visual{min-height:280px}.search button{padding:0 12px}.stats{gap:16px}.stat strong{font-size:20px}.stat span{font-size:9px}.cards{grid-template-columns:1fr}.card-img{height:230px}.tips{grid-template-columns:1fr}.section{padding:54px 5vw}.route-layout{gap:25px}.map-panel iframe{height:330px}.map-panel{min-height:330px}footer{padding:26px 5vw}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#" aria-label="Gokarna Beach Tracker home"><span class="brand-mark">⌁</span><span>Gokarna Tracker<small>Follow the coast</small></span></a>
+  <nav class="navlinks" aria-label="Main navigation">
+    <a href="#beaches">Beaches</a><a href="#route">Trek route</a><a href="#tips">Travel tips</a><a class="nav-cta" href="#route">Explore map ↗</a>
+  </nav>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">Karnataka · Arabian Sea</div>
+    <h1>Find your<br>own <em>shore.</em></h1>
+    <p>Your simple guide to Gokarna’s beaches and coastal walks. Discover places, open directions, and plan a more thoughtful trip.</p>
+    <form class="search" id="searchForm" role="search">
+      <input id="beachSearch" type="search" placeholder="Search beaches…" aria-label="Search beaches">
+      <button type="submit">Find place ↗</button>
+    </form>
+    <div class="hero-note">Local guide concept · Check conditions before you go</div>
+    <div class="stats"><div class="stat"><strong>05</strong><span>Beach guides</span></div><div class="stat"><strong>01</strong><span>Coast to explore</span></div><div class="stat"><strong>∞</strong><span>Sea views</span></div></div>
+  </div>
+  <div class="hero-visual" role="img" aria-label="Ocean waves along a tropical coast"><div class="photo-label">Gokarna, Karnataka&nbsp; ↗</div></div>
+</section>
+
+<section class="section" id="beaches">
+  <div class="section-head"><div><div class="kicker">Explore the shoreline</div><h2>Pick your beach.</h2></div><p>From easy beach days to longer coastal walks, start with a place that suits your plan.</p></div>
+  <div class="empty" id="emptyState">No matching beach found. Try “Om”, “Kudle” or “Paradise”.</div>
+  <div class="cards" id="beachCards">
+    <article class="card" data-name="om beach">
+      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=80')"><span class="badge">Popular stop</span></div>
+      <div class="card-body"><div class="card-top"><div><h3>Om Beach</h3><div class="type">Coastal views</div></div></div><p>A well-known Gokarna beach, often visited for its curved shoreline and sea views.</p><div class="card-actions"><a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Om+Beach+Gokarna">Open directions ↗</a><a class="btn" href="#route">Route info</a></div></div>
+    </article>
+    <article class="card" data-name="kudle beach">
+      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=80')"><span class="badge">Sunset favourite</span></div>
+      <div class="card-body"><h3>Kudle Beach</h3><div class="type">Relax & sunset</div><p>A popular spot for a relaxed beach visit. Check the route and local conditions before walking onward.</p><div class="card-actions"><a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Kudle+Beach+Gokarna">Open directions ↗</a><a class="btn" href="#tips">Travel tips</a></div></div>
+    </article>
+    <article class="card" data-name="half moon beach">
+      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=900&q=80')"><span class="badge">Check access</span></div>
+      <div class="card-body"><h3>Half Moon Beach</h3><div class="type">Coastal walk</div><p>A smaller cove often included in coastal itineraries. Access can vary with weather, tides and trail conditions.</p><div class="card-actions"><a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Half+Moon+Beach+Gokarna">Open directions ↗</a></div></div>
+    </article>
+    <article class="card" data-name="paradise beach">
+      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=900&q=80')"><span class="badge">Plan ahead</span></div>
+      <div class="card-body"><h3>Paradise Beach</h3><div class="type">Nature escape</div><p>A scenic coastal destination. Confirm current access and safe travel options locally before setting out.</p><div class="card-actions"><a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Paradise+Beach+Gokarna">Open directions ↗</a></div></div>
+    </article>
+    <article class="card" data-name="gokarna main beach">
+      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=900&q=80')"><span class="badge">Near town</span></div>
+      <div class="card-body"><h3>Gokarna Main Beach</h3><div class="type">Town & sea</div><p>A beach near the town area, useful to combine with a visit to Gokarna’s temples and local streets.</p><div class="card-actions"><a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Gokarna+Main+Beach">Open directions ↗</a></div></div>
+    </article>
+    <article class="card" data-name="beach planning">
+      <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1509233725247-49e657c54213?auto=format&fit=crop&w=900&q=80')"><span class="badge">Plan responsibly</span></div>
+      <div class="card-body"><h3>Plan Your Coast Day</h3><div class="type">Trip planning</div><p>Keep water, sun protection and a charged phone with you. Avoid isolated trails after dark or during rough weather.</p><div class="card-actions"><a class="btn btn-primary" href="#tips">See travel tips ↓</a></div></div>
+    </article>
+  </div>
+  <p class="notice">Photo note: sample stock photos are used in this starter template and may not depict the exact beach named. Replace them with your own or properly licensed Gokarna photographs before public launch.</p>
+</section>
+
+<section class="section route-section" id="route">
+  <div class="route-layout">
+    <div class="route-copy"><div class="kicker">Coastal route planner</div><h2>Follow the coast.<br>Stay safe.</h2><p>Use the map to explore beach locations. The sequence below is a planning idea—not a verified, always-open trekking route. Check local access, tides, weather and trail safety before starting.</p>
+      <div class="route-list">
+        <div class="route-stop"><span class="num">1</span><div><strong>Kudle Beach</strong><small>Open location in Google Maps</small></div></div>
+        <div class="route-stop"><span class="num">2</span><div><strong>Om Beach</strong><small>Confirm the safest connection locally</small></div></div>
+        <div class="route-stop"><span class="num">3</span><div><strong>Half Moon Beach</strong><small>Access may depend on conditions</small></div></div>
+        <div class="route-stop"><span class="num">4</span><div><strong>Paradise Beach</strong><small>Check access before departure</small></div></div>
+      </div>
+      <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Gokarna+beaches+Karnataka">Explore Gokarna on Maps ↗</a>
+    </div>
+    <div><div class="map-panel"><iframe title="Map of Gokarna, Karnataka" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Gokarna%2C%20Karnataka&t=&z=12&ie=UTF8&iwloc=&output=embed"></iframe></div><div class="map-caption">Map provided by Google Maps. For turn-by-turn navigation, open the location link on your device.</div></div>
+  </div>
+</section>
+
+<section class="section" id="tips">
+  <div class="section-head"><div><div class="kicker">Before you head out</div><h2>Small tips. Better trips.</h2></div><p>Keep the coast enjoyable for you, other visitors and the people who call Gokarna home.</p></div>
+  <div class="tips">
+    <article class="tip"><div class="tip-icon">🌦️</div><h3>Check conditions</h3><p>Check weather, sea conditions and local advice. Avoid cliff edges and coastal trails during rough weather.</p></article>
+    <article class="tip"><div class="tip-icon">💧</div><h3>Carry essentials</h3><p>Bring drinking water, sun protection, suitable footwear and a charged phone for your outing.</p></article>
+    <article class="tip"><div class="tip-icon">🌿</div><h3>Leave no trace</h3><p>Take your rubbish with you, respect local communities and follow signs or restricted-access notices.</p></article>
+  </div>
+</section>
+
+<section class="cta"><div><div class="eyebrow">Your next coastal escape</div><h2>Explore Gokarna, one beach at a time.</h2><p>Save this guide, check local conditions, and use the map to plan your route before you leave.</p></div><a class="btn" href="#beaches">Explore beaches ↑</a></section>
+</main>
+<footer><div>© <span id="year"></span> Gokarna Beach Tracker · Independent travel guide concept</div><div>Information can change. Confirm local access and safety before travelling.</div></footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+const form = document.getElementById('searchForm');
+const input = document.getElementById('beachSearch');
+const cards = [...document.querySelectorAll('#beachCards .card')];
+const empty = document.getElementById('emptyState');
+function filterCards(q){
+  let shown=0; const term=q.trim().toLowerCase();
+  cards.forEach(card=>{
+    const match=!term || (card.dataset.name+' '+card.innerText).toLowerCase().includes(term);
+    card.style.display=match?'':'none'; if(match) shown++;
+  });
+  empty.style.display=shown?'none':'block';
+  document.getElementById('beaches').scrollIntoView({behavior:'smooth',block:'start'});
+}
+form.addEventListener('submit',e=>{e.preventDefault();filterCards(input.value)});
+input.addEventListener('input',()=>{if(!input.value.trim())filterCards('')});
+</script>
+</body>
+</html>
